@@ -12,4 +12,5 @@ def BiSeNet(pretrained=False, progress=True, map_location=None, n_classes=19):
     if pretrained:
         net.load_state_dict(torch.hub.load_state_dict_from_url(
             _pretrained_url, map_location=map_location, progress=progress, check_hash=True))
+    net.eval()
     return net
